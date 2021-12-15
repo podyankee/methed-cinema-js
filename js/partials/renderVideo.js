@@ -19,7 +19,7 @@ const firstRender = data => {
 };
 
 const renderVideo = async () => {
-	const data = await getTrends();
+	const data = await getTrends('all');
 	const [firstCard, ...otherCard] = data.results;
 	otherCard.length = 12;
 	firstRender(firstCard);
