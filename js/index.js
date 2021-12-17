@@ -1,6 +1,7 @@
 import slideMenu from './partials/menu.js';
 import renderVideo from './partials/renderVideo.js';
 import menuLink from './partials/menuLink.js';
+import search from './partials/search.js';
 
 slideMenu({
 	openBtn: '.header__burger-btn',
@@ -11,3 +12,4 @@ slideMenu({
 
 renderVideo();
 menuLink();
+search();

@@ -13,20 +13,20 @@ const menuLink = () => {
 				e.preventDefault();
 				filmWeek.style.display = 'none';
 				title.textContent = target.textContent;
+				if (target.classList.contains('get-nav__link_triends')) {
+					getTrends('all').then(data => renderCard(data.results));
+				}
 				if (target.classList.contains('get-nav__link_popular-movies')) {
-					getPopular('movie').then(data => renderCard(data.results));
+					getPopular('movie').then(data => renderCard(data.results, 'movie'));
 				}
 				if (target.classList.contains('get-nav__link_top-tv')) {
-					getTop('tv').then(data => renderCard(data.results));
-				}
-				if (target.classList.contains('get-nav__link_triends')) {
-					getTrends('movie').then(data => renderCard(data.results));
+					getTop('tv').then(data => renderCard(data.results, 'tv'));
 				}
 				if (target.classList.contains('get-nav__link_popular-tv')) {
-					getPopular('tv').then(data => renderCard(data.results));
+					getPopular('tv').then(data => renderCard(data.results, 'tv'));
 				}
 				if (target.classList.contains('get-nav__link_top-movies')) {
-					getTop('movie').then(data => renderCard(data.results));
+					getTop('movie').then(data => renderCard(data.results, 'movie'));
 				}
 			}
 		});
